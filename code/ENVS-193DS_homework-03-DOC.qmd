@@ -1,0 +1,38 @@
+---
+title: "ENVS-193DS_homework-03-DOC"
+author: "Megan Zhao"
+date: 5/28/26
+format: pdf
+editor: source
+messages: false
+warning: false
+---
+
+# Set Up
+
+Packages
+
+```{r}
+#| label: packages
+
+library(tidyverse)
+library(here)
+library(janitor)
+library(readxl)
+
+```
+
+Data: 
+
+```{r}
+#| label: data
+
+kelp <- read.csv()
+```
+
+
+# Problem 1
+# Problem 2
+# Problem 3
+# Problem 4
+
