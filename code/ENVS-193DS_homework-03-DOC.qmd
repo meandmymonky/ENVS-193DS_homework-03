@@ -27,12 +27,111 @@ Data:
 ```{r}
 #| label: data
 
-kelp <- read.csv()
+kelp <- read.csv('temp-kelp.csv')
+
 ```
 
-
 # Problem 1
+
+## a.
+
+[]
+
+## b.
+
+```{r}
+#| label: test-1-visualization
+
+```
+
+## c.
+
+### assumption checking 
+
+```{r}
+#| label: assumption-checking
+
+```
+
+[insert text here]
+
+### test running
+
+```{r}
+#| label: test-running
+
+```
+
+## d.
+
+[]
+
+## e.
+
+[]
+
+## f.
+
+```{r}
+#| label: test-2-visualization
+
+```
+
 # Problem 2
+
+## a.
+
+```{r}
+#| label: plot-1
+
+```
+
+```{r}
+#| label: plot-2
+
+```
+
+## b.
+
+[]
+
 # Problem 3
+
+## a.
+
+[]
+
+## b. 
+
+[insert image]
+
+## c.
+
+[insert image]
+
+## d. 
+
+[]
+
+## e.
+
+[insert hyperlink]
+
 # Problem 4
+
+## a. 
+
+[]
+
+## b.
+
+[]
+
+## c.
+
+[]
+
+## d.
+
+[]
 
