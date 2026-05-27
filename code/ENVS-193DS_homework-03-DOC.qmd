@@ -3,6 +3,7 @@ title: "ENVS-193DS_homework-03-DOC"
 author: "Megan Zhao"
 date: 5/28/26
 format: pdf
+toc: true
 editor: source
 messages: false
 warning: false
@@ -15,6 +16,7 @@ Packages
 ```{r}
 #| label: packages
 
+# reading in packages
 library(tidyverse)
 library(here)
 library(janitor)
@@ -27,7 +29,7 @@ Data:
 ```{r}
 #| label: data
 
-# creating object
+# creating object from 'kelp' from data ** come back to change this for hw and midterm lowkey
 kelp <- read.csv(here('data', 'temp-kelp.csv'))
 
 ```
@@ -82,6 +84,10 @@ ggplot(
 ```{r}
 #| label: assumption-checking
 
+cor.test(kelp$kelp_elong, kelp$temp_c,
+         method = 'spearman')
+
+
 ```
 
 [insert text here]
@@ -130,7 +136,7 @@ ggplot(
 
 ## a.
 
-[]
+[An affective visualization for my personal data could take the form of a drawing, showing box plots -- representing mood -- that are being climbed/conquered by a person. For example, if a good mood leads to more work being completed, an affective visualization could show a raised large stack of papers (higher box plot) with sticky tabs sticking out (overlaid data) and a confident/smiling person lifting them above their head. On the inverse, if a bad mood leads to less work being completed, an affective visualization could show strewn papers on the floor (lower box plot) with balled up papers strewn about (overlaid data) and a dejected/tired person sitting down on them. Ideally this visualization would make the viewer understand the feeling of being unproductive/unwell in terms of work completion.]
 
 ## b. 
 
