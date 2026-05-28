@@ -49,7 +49,7 @@ theme_set(theme_bw())
 
 ## a.
 
-[The appropriate tests to determine the strength of the relationship between temperature and giant kelp frond elongation rate are the Pearson's correlation test and the Spearman rank correlation test. While both tests can be used to determine relationship strength, Pearson's correlation is parametric, assuming continuous and normally distributed variables with independent observations, and explores the linear relationship between variables. On the other hand, the Spearman rank correlation is non-parametric, assuming independent observations, and explores the monotonic relationship between variables.]
+The appropriate tests to determine the strength of the relationship between temperature and giant kelp frond elongation rate are the Pearson's correlation test and the Spearman rank correlation test. While both tests can be used to determine relationship strength, Pearson's correlation is parametric, assuming continuous and normally distributed variables with independent observations, and explores the linear relationship between variables. On the other hand, the Spearman rank correlation is non-parametric, assuming independent observations, and explores the monotonic relationship between variables.
 
 ## b.
 
@@ -88,7 +88,7 @@ ggplot(
 ### assumption checking 
 
 ```{r}
-#| label: assumption-checking
+#| label: assumption-checking-1
 
 # base layer: ggplot
 ggplot(
@@ -117,12 +117,12 @@ ggplot(
 
 ```
 
-[Because I plan on running a Spearmans rank correlation test, I checked if my data is independent and monotonic. I checked independence by ensuring that proper methodology was being used when collecting data (data collected individually, stated in Problem 1 introduction), and for a monotonic relationship by creating a visualization. After checking my assumptions, I concluded that I have independent observations, and that my data is monotonic -- as ocean temperature increases, giant kelp frond elongation rate decreases.]
+Because I plan on running a Spearmans rank correlation test, I only had to check if my data was independent and monotonic. I checked independence by ensuring that proper methodology was being used when collecting data (data collected individually, stated in Problem 1 introduction), and for a monotonic relationship by creating a visualization. After checking my assumptions, I concluded that I have independent observations, and that my data is monotonic -- as ocean temperature increases, giant kelp frond elongation rate decreases.
 
 ### test running
 
 ```{r}
-#| label: test-running
+#| label: test-running-1
 
 # correlation test
 cor.test(
@@ -130,7 +130,7 @@ cor.test(
   kelp$kelp_elong,
   # x-variable
   kelp$temp_c,
-  # use spearman test
+  # use spearmans test
   method = 'spearman',
   # use normal p-approximation
   exact = FALSE)
@@ -139,7 +139,7 @@ cor.test(
 
 ## d.
 
-[]
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate I used a Spearmans rank correlation test. I chose to use Spearmans test over Pearsons as I did not check for normality nor a linear relationship. After running the Spearmans test, I found a strong negative relationship between ocean temperature and giant kelp frond elongation rate (Spearman $\rho$ = -0.69, S = 9216.1, p = 1.29 * 10^-5^, $\alpha$ = 0.05).
 
 ## e.
 
@@ -148,9 +148,45 @@ cor.test(
 ## f.
 
 ```{r}
-#| label: test-2-visualization
+#| label: assumption-checking-2
+
+# base layer: ggplot
+ggplot(
+  # starting data frame
+  data = kelp,
+  # y-axis: kelp frond elongation rate
+  mapping = aes(sample = kelp_elong)
+) +
+  # first layer: QQ reference line
+  geom_qq_line(
+    # coloring line
+    color = 'navyblue'
+  ) +
+  # second layer: QQ points
+  geom_qq(
+    # coloring points
+    color = 'chartreuse4', 
+    # changing opacity
+    alpha = 0.6
+  ) 
 
 ```
+
+```{r}
+#| label: test-running-2
+
+# correlation test
+cor.test(
+  # y-variable
+  kelp$kelp_elong,
+  # x-variable
+  kelp$temp_c,
+  # use pearsons test
+  method = 'pearson')
+
+```
+
+Yes, both tests would have led me to the same decision -- finding a strong negative relationship and rejecting the null -- as both tests resulted in a strong negative correlation of -0.69 (correlation coefficients: |0.7| - |0.9| = strong correlation). After running the Pearson's test, I found a strong negative relationship between ocean temperature and giant kelp frond elongation rate (Pearson's r = -0.69, t(30) = -5.19, p = 1.37 * 10^-5^, $\alpha$ = 0.05). This conclusion is the same as my conclusion after running the Spearman's test. 
 
 # Problem 2
 
@@ -196,7 +232,8 @@ cor.test(
 
 ## a. 
 
-[In this paper, the researchers use multiple statistical tests to analyze the effect of landscape differences (size, disturbance, etc.) on shrew population abundance. The statistical tests that the authors are using to address their main research question are linear regression, logsitic regression, ANOVA, Shapiro-Wilk, and the Kruskal-Wallis tests. Attached below is a table created using data from a linear regression test, showing how different landscapes can impact shrew populations***was working on this -- attach image and what implciations]
+In this paper, the researchers use multiple statistical tests to analyze the effect of landscape differences (size, disturbance, etc.) on shrew population abundance. The statistical tests that the authors are using to address their main research question are linear regression, logsitic regression, ANOVA, Shapiro-Wilk, and the Kruskal-Wallis tests. Attached below is a table created using data from a linear regression test, showing how different landscapes can impact shrew population distribution and abundance.
+
 
 ## b.
 
