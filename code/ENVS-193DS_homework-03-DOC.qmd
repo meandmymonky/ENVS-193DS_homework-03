@@ -79,7 +79,7 @@ ggplot(
     # label y-axis
     y = expression(paste('Giant Kelp Frond Elongation Rate (cm day' ^-1,')')),
     # add chart title
-    title = 'Fig. 1-1: Correlation between Ocean Temperature and Giant Kelp Frond Growth')
+    title = 'Correlation between Ocean Temperature and Giant Kelp Frond Growth')
 
 ```
 
@@ -113,7 +113,7 @@ ggplot(
     # label y-axis
     y = expression(paste('Giant Kelp Frond Elongation Rate (cm day' ^-1,')')),
     # add chart title
-    title = 'Fig. 1-1: Correlation between Ocean Temperature and Giant Kelp Frond Growth')
+    title = 'Correlation between Ocean Temperature and Giant Kelp Frond Growth')
 
 ```
 
@@ -232,12 +232,13 @@ Yes, both tests would have led me to the same decision -- finding a strong negat
 
 ## a. 
 
-In this paper, the researchers use multiple statistical tests to analyze the effect of landscape differences (size, disturbance, etc.) on shrew population abundance. The statistical tests that the authors are using to address their main research question are linear regression, logsitic regression, ANOVA, Shapiro-Wilk, and the Kruskal-Wallis tests. Attached below is a table created using data from a linear regression test, showing how different landscapes can impact shrew population distribution and abundance.
+In this paper, the researchers use multiple statistical tests to analyze the effect of landscape differences (size, disturbance, etc.) on shrew population abundance. The statistical tests that the authors are using to address their main research question are linear regression, logsitic regression, ANOVA, Shapiro-Wilk, and the Kruskal-Wallis tests. Attached below is a table created using data from a linear regression test, showing how different landscapes can impact a specifc shrews species (Notiosorex crawfordi) population distribution and abundance.
 
+![linear-regression-graph](lin-reg.png)
 
 ## b.
 
-[]
+The table clearly represents the data underlying the tests. It displays each predictor (ex. control, density of scrubs, etc.) and the variables for each predictor used to calculate expected shrew abundance in locales displaying variations of these predictors. This clearly shows the data that the scientists used to run the tests. However, it is lacking in data showing how these variables were found, which is likely in another table.
 
 ## c.
 
