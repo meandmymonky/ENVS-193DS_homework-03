@@ -246,5 +246,5 @@ The authors moderately handle visual clutter. While it is clear what is being di
 
 ## d.
 
-[]
+To make this table better, I would relabel the 'Source' column to 'Predictors', reformat/align the data within the columns, and add column lines to help organize my data/make my table look neater. The first change is because the variables listed under 'Source' are all variables that are being used to predict shrew abundance; subsequently, changing the column title will make it clearer to the reader what they are looking at -- they will not have to figure out what 'Source' indicates, and will have a better understanding that these variables are being used as predictors in the linear regression data. The remaining two changes are to improve table organization: currently the data is misaligned with inconsistent margins -- by aligning margins, and putting clear column lines in which to align margins to, the chart will look better and be easier to read.
 
