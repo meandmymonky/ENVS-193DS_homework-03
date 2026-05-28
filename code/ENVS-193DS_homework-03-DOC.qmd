@@ -34,15 +34,6 @@ kelp <- read.csv(here('data', 'temp-kelp.csv'))
 
 ```
 
-Cleaning:
-
-```{r}
-#| label: cleaning
-
-# *** do we need to clean the data?
-
-```
-
 Aesthetics
 
 ```{r}
@@ -58,22 +49,37 @@ theme_set(theme_bw())
 
 ## a.
 
-[The appropriate tests to determine the strength of the relationship between temperature and giant kelp frond elongation rate are the Pearson's correlation test and the Spearman rank correlation test. While both tests can be used to determine relationship strength, Pearson's correlation is parametric, requiring continuous and normally distributed variables with independent observations, and explores the linear relationship between variables. On the other hand, the Spearman rank correlation is non-parametric, requiring independent observations, and explores the monotonic relationship between variables.]
+[The appropriate tests to determine the strength of the relationship between temperature and giant kelp frond elongation rate are the Pearson's correlation test and the Spearman rank correlation test. While both tests can be used to determine relationship strength, Pearson's correlation is parametric, assuming continuous and normally distributed variables with independent observations, and explores the linear relationship between variables. On the other hand, the Spearman rank correlation is non-parametric, assuming independent observations, and explores the monotonic relationship between variables.]
 
 ## b.
 
 ```{r}
 #| label: test-1-visualization
 
+# base layer: ggplot
 ggplot(
+  # starting data frame
   data = kelp,
+  # x-axis
   mapping = aes(x = temp_c,
+                # y-axis
                 y = kelp_elong)
 ) +
-  geom_point(color = 'chartreuse4',
-             alpha = 0.8) +
-  labs(x = 'Ocean Temperature (°C)',
-       y = 'Giant Kelp Frond Elongation Rate (cm day ***CHANGE THIS)')
+  # first layer: points
+  geom_point(
+    # coloring points
+    color = 'chartreuse4',
+    # changing opacity
+    alpha = 0.8
+    ) +
+  # relabelling x-axis, y-axis, and title
+  labs(
+    # label x-axis
+    x = 'Ocean Temperature (°C)',
+    # label y-axis
+    y = expression(paste('Giant Kelp Frond Elongation Rate (cm day' ^-1,')')),
+    # add chart title
+    title = 'Fig. 1-1: Correlation between Ocean Temperature and Giant Kelp Frond Growth')
 
 ```
 
@@ -84,18 +90,50 @@ ggplot(
 ```{r}
 #| label: assumption-checking
 
-cor.test(kelp$kelp_elong, kelp$temp_c,
-         method = 'spearman')
-
+# base layer: ggplot
+ggplot(
+  # starting data frame
+  data = kelp,
+  # x-axis
+  mapping = aes(x = temp_c,
+                # y-axis
+                y = kelp_elong)
+) +
+  # first layer: points
+  geom_point(
+    # coloring points
+    color = 'chartreuse4',
+    # changing opacity
+    alpha = 0.8
+    ) +
+  # relabelling x-axis, y-axis, and title
+  labs(
+    # label x-axis
+    x = 'Ocean Temperature (°C)',
+    # label y-axis
+    y = expression(paste('Giant Kelp Frond Elongation Rate (cm day' ^-1,')')),
+    # add chart title
+    title = 'Fig. 1-1: Correlation between Ocean Temperature and Giant Kelp Frond Growth')
 
 ```
 
-[insert text here]
+[Because I plan on running a Spearmans rank correlation test, I checked if my data is independent and monotonic. I checked independence by ensuring that proper methodology was being used when collecting data (data collected individually, stated in Problem 1 introduction), and for a monotonic relationship by creating a visualization. After checking my assumptions, I concluded that I have independent observations, and that my data is monotonic -- as ocean temperature increases, giant kelp frond elongation rate decreases.]
 
 ### test running
 
 ```{r}
 #| label: test-running
+
+# correlation test
+cor.test(
+  # y-variable
+  kelp$kelp_elong,
+  # x-variable
+  kelp$temp_c,
+  # use spearman test
+  method = 'spearman',
+  # use normal p-approximation
+  exact = FALSE)
 
 ```
 
@@ -158,7 +196,7 @@ cor.test(kelp$kelp_elong, kelp$temp_c,
 
 ## a. 
 
-[]
+[In this paper, the researchers use multiple statistical tests to analyze the effect of landscape differences (size, disturbance, etc.) on shrew population abundance. The statistical tests that the authors are using to address their main research question are linear regression, logsitic regression, ANOVA, Shapiro-Wilk, and the Kruskal-Wallis tests. Attached below is a table created using data from a linear regression test, showing how different landscapes can impact shrew populations***was working on this -- attach image and what implciations]
 
 ## b.
 
