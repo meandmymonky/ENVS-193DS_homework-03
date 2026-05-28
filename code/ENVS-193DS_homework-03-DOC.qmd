@@ -242,7 +242,7 @@ The table clearly represents the data underlying the tests. It displays each pre
 
 ## c.
 
-[]
+The authors moderately handle visual clutter. While it is clear what is being displayed in the table as there is little non-data information provided, the table itself has inconsistent formatting, with misaligned numbers/columns. However, the "data:ink ratio" is very low/good -- the majority of "ink" is being used to represent actual data -- there is very little visual clutter relative to the information being presented. Subsequently, while the aesthetics/organization could be better, the visual clutter is low, and the data is clearly communicable.
 
 ## d.
 
