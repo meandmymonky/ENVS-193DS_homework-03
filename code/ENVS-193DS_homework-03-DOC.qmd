@@ -29,8 +29,10 @@ Data:
 ```{r}
 #| label: data
 
-# creating object from 'kelp' from data ** come back to change this for hw and midterm lowkey
+# creating object from 'kelp' from data
 kelp <- read.csv(here('data', 'temp-kelp.csv'))
+
+# creating object 'mz_data' from data
 mz_data <- read_xlsx(here('data', '193DS-personal-data.xlsx'))
 
 ```
@@ -47,8 +49,7 @@ mz_clean <- mz_data |>
   # create new data column 'completed_v_intended'
   mutate(
     # use data from select columns to calculate new column
-    completed_v_intended = (number_of_completed_tasks/number_of_intended_tasks) * 100
-  )
+    completed_v_intended = (number_of_completed_tasks/number_of_intended_tasks) * 100)
 
 ```
 
@@ -308,7 +309,7 @@ ggplot(
                'd4' = 'darkgreen',
                # 'navy' for 'five'
                'e5' = 'navy')
-    ) +
+  ) +
   # changing fill colors
   scale_fill_manual(
     # 'red' for 'one'
@@ -364,15 +365,15 @@ An affective visualization for my personal data could take the form of a drawing
 
 ## b. 
 
-[insert image]
+![affective-visualization-sketch](affect-vis-sketch.jpg)
 
 ## c.
 
-[insert image]
+![affective-visualization-draft](affect-vis-draft.jpg)
 
 ## d. 
 
-[]
+I am showing an affective representation of how productivity changes depending on activities -- in this case, I am showing productivity as stacks of papers/books being completed, and activities as a bunch of items/things (for instance, a backpack for class, climbing shoes, etc.) that increase as activities increase. I got influences from Jill Pelto's paintings; I really liked how oftentimes data was represented as mountains/rivers/cracks on a glacier, etc. I tried to emulate something similar, showing data as a "mountain" of papers. Outside of Jill Pelto, I got influences from my daily life; the items depicted are all reflective of things that I have had to carry around for activities before. The form of my work is going to be a digital drawing -- however, I currently have no access to my drawing software so I am drawing it on paper before transferring it onto my computer. To create my work, I looked at many of the items that I own, and wondered how each one could potentially tie in my actives that I do every day. People have often told me that I always carry way too many things, which made me think about why, and the relationship between my carried items, busyness, and subsequent productivity. I also added some details that I just thought would be fun, and a better representation of me -- for instance, I plan to put a drawing of an album cover that I like in the background, I have a drawing of me doing work on top of the "mountain", etc. 
 
 ## e.
 
