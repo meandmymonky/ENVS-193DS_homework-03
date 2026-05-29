@@ -159,7 +159,7 @@ To evaluate the strength of the relationship between temperature and giant kelp 
 
 ## e.
 
-[]
+There is a strong correlation between ocean temperature and giant kelp frond elongation rate. As temperature increases, kelp frond elongation rate decreases, indicating decreased growth with warming temperatures. This information is important for giant kelp health -- the ongoing climate crisis and subsequent consistently warming ocean temperatures hold significant negative implications for giant kelp health over time; without action against climate change (and warming oceans), giant kelp populations will degrade over time, potentially leading to larger-scale ecosystem damages.
 
 ## f.
 
@@ -352,7 +352,9 @@ ggplot(
 
 ## b.
 
-[]
+*Work type figure Caption*: Task Completion Separated by Work Type. Box plots of work completion depending on environment. Pink plot represents working alone, green plot represents working with other. Each data point represents an individual measurement of completed task percentage for the day, from 4/23/26 to 5/27/26. Fences are the IQRs (25th and 75th percentiles), with the median (50th percentile) of collected data per environment as a line in between each respective box. Whiskers represent minimum and maximum values (1.5 x lower or upper IQR bound)   
+
+*Mood figure Caption*: Task Completion Separated by mood. Box plots of work completion depending on a mood scale of 1-4, with 1 being the lowest and 4 being the highest (within the data). Red plot is a mood of 1, orange plot is a mood of 2, yellow plot is a mood of 3, and green plot is a mood of 4. Each data point represents an individual measurement of completed task percentage for the day, from 4/23/26 to 5/27/26. Fences are the IQRs (25th and 75th percentiles), with the median (50th percentile) of collected data per environment as a line in between each respective box. Whiskers represent minimum and maximum values (1.5 x lower or upper IQR bound)   
 
 # Problem 3
 
