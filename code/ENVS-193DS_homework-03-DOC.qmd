@@ -49,7 +49,9 @@ mz_clean <- mz_data |>
   # create new data column 'completed_v_intended'
   mutate(
     # use data from select columns to calculate new column
-    completed_v_intended = (number_of_completed_tasks/number_of_intended_tasks) * 100)
+    completed_v_intended = (
+      number_of_completed_tasks/number_of_intended_tasks
+    ) * 100)
 
 ```
 
@@ -58,6 +60,7 @@ Aesthetics
 ```{r}
 #| label: aesthetics
 
+# setting figure themes
 theme_set(theme_classic())
 
 ```
@@ -96,7 +99,7 @@ ggplot(
     # label y-axis
     y = expression(paste('Giant Kelp Frond Elongation Rate (cm day' ^-1,')')),
     # add chart title
-    title = 'Correlation between Ocean Temperature and Giant Kelp Frond Growth')
+    title = 'Ocean Temperature and Giant Kelp Frond Growth Correlation')
 
 ```
 
@@ -130,7 +133,7 @@ ggplot(
     # label y-axis
     y = expression(paste('Giant Kelp Frond Elongation Rate (cm day' ^-1,')')),
     # add chart title
-    title = 'Correlation between Ocean Temperature and Giant Kelp Frond Growth')
+    title = 'Ocean Temperature and Giant Kelp Frond Growth Correlation')
 
 ```
 
@@ -164,6 +167,8 @@ There is a strong correlation between ocean temperature and giant kelp frond elo
 
 ## f.
 
+### assumption checking
+
 ```{r}
 #| label: assumption-checking-2
 
@@ -188,6 +193,8 @@ ggplot(
   ) 
 
 ```
+
+### test running
 
 ```{r}
 #| label: test-running-2
@@ -364,11 +371,9 @@ ggplot(
 An affective visualization for my personal data could take the form of a drawing, showing box plots -- representing mood -- that are being climbed/conquered by a person. For example, if a good mood leads to more work being completed, an affective visualization could show a raised large stack of papers (higher box plot) with sticky tabs sticking out (overlaid data) and a confident/smiling person lifting them above their head. Another affective visualization could be another drawing, showing a linear model -- representing work completed -- that is being "weighed down" by the amount of things that I have in my bag (representing the time I spend on campus). Both of these "statistical visualizations" (boxplot, linear model) would be represented via something like stacks of paper, rather than points/lines indicating work being completed. Ideally these visualizations would make the viewer understand what factors/feelings/emotions are influencing work completion, and better relate/understand the graph.
 
 ## b. 
-
 ![affective-visualization-sketch](affect-vis-sketch.jpg)
 
 ## c.
-
 ![affective-visualization-draft](affect-vis-draft.jpg)
 
 ## d. 
