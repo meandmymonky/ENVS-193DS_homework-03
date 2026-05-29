@@ -31,6 +31,24 @@ Data:
 
 # creating object from 'kelp' from data ** come back to change this for hw and midterm lowkey
 kelp <- read.csv(here('data', 'temp-kelp.csv'))
+mz_data <- read_xlsx(here('data', '193DS-personal-data.xlsx'))
+
+```
+
+Cleaning
+
+```{r}
+#| label: cleaning-data
+
+# create new object called 'mz_clean' from 'mz_data'
+mz_clean <- mz_data |> 
+  # clean names
+  clean_names() |>
+  # create new data column 'completed_v_intended'
+  mutate(
+    # use data from select columns to calculate new column
+    completed_v_intended = (number_of_completed_tasks/number_of_intended_tasks) * 100
+  )
 
 ```
 
@@ -39,11 +57,9 @@ Aesthetics
 ```{r}
 #| label: aesthetics
 
-theme_set(theme_bw())
+theme_set(theme_classic())
 
 ```
-
-
 
 # Problem 1
 
@@ -71,7 +87,7 @@ ggplot(
     color = 'chartreuse4',
     # changing opacity
     alpha = 0.8
-    ) +
+  ) +
   # relabelling x-axis, y-axis, and title
   labs(
     # label x-axis
@@ -105,7 +121,7 @@ ggplot(
     color = 'chartreuse4',
     # changing opacity
     alpha = 0.8
-    ) +
+  ) +
   # relabelling x-axis, y-axis, and title
   labs(
     # label x-axis
@@ -193,12 +209,144 @@ Yes, both tests would have led me to the same decision -- finding a strong negat
 ## a.
 
 ```{r}
-#| label: plot-1
+#| label: plot-1-working-with-others
+
+# base layer: ggplot
+ggplot(
+  # use data frame 'mz_clean'
+  data = mz_clean,
+  # x from 'working_with_others_y_n' col
+  mapping = aes(x = working_with_others_y_n,
+                # y from 'completed_v_intended' col
+                y = completed_v_intended,
+                # coloring by 'working_with_others_y_n'
+                color = working_with_others_y_n,
+                # fill by 'working_with_others_y_n'
+                fill = working_with_others_y_n)
+) +
+  # first layer: boxplot
+  geom_boxplot(
+    # reduce opacity
+    alpha = 0.75
+  ) +
+  # second layer: jitterplot
+  geom_jitter(
+    # remove vertical jitter
+    height = 0,
+    # add horizontal jitter
+    width = 0.2
+  ) +
+  # changing colors
+  scale_color_manual(
+    # 'forestgreen' for 'y'
+    values = c('y' = 'forestgreen',
+               # 'mediumvioletred' for 'n'
+               'n' = 'mediumvioletred')
+  ) +
+  # changing fill colors
+  scale_fill_manual(
+    # 'lawngreen' for 'y'
+    values = c('y' ='lawngreen',
+               # 'violetred' for n
+               'n' = 'violetred1')
+  ) +
+  # changing titles and axes names
+  labs(
+    # label x axis
+    x = 'Working with others (no/yes)',
+    # label y axis
+    y = '% of completed tasks',
+    # change title
+    title = 'Task completion seperated by work type',
+    # change subtitle
+    subtitle = '5/27/26') + 
+  # remove legend
+  theme(
+    legend.position = 'none'
+  )
 
 ```
 
 ```{r}
-#| label: plot-2
+#| label: plot-2-mood
+
+# base layer: ggplot
+ggplot(
+  # use data frame 'mz_clean'
+  data = mz_clean,
+  # x from 'mood_exhaustion_1_5' col
+  mapping = aes(x = mood_exhaustion_1_5,
+                # y from 'completed_v_intended' col
+                y = completed_v_intended,
+                # group by 'mood_exhaustion_1_5'
+                group = mood_exhaustion_1_5,
+                # fill by 'mood_exhaustion_1_5'
+                fill = mood_exhaustion_1_5,
+                color = mood_exhaustion_1_5)
+) +
+  # first layer: boxplot
+  geom_boxplot(
+    # reduce opacity
+    alpha = 0.75
+  ) +
+  # second layer: jitterplot
+  geom_jitter(
+    # remove vertical jitter
+    height = 0,
+    # add horizontal jitter
+    width = 0.2
+  ) +
+  # changing colors
+  scale_color_manual(
+    # 'darkred' for 'one'
+    values = c('a1' ='darkred',
+               # 'sienna4' for 'two'
+               'b2' = 'sienna4',
+               # 'darkgoldenrod4' for 'three'
+               'c3' = 'darkgoldenrod4',
+               # 'darkgreen' for 'four'
+               'd4' = 'darkgreen',
+               # 'navy' for 'five'
+               'e5' = 'navy')
+    ) +
+  # changing fill colors
+  scale_fill_manual(
+    # 'red' for 'one'
+    values = c('a1' ='red',
+               # 'orange' for 'two'
+               'b2' = 'orange',
+               # 'yellow' for 'three'
+               'c3' = 'yellow',
+               # 'green' for 'four'
+               'd4' = 'green')
+  ) +
+  # changing x-axis displays
+  scale_x_discrete(
+    # a1 to 1
+    labels = c('a1' = '1',
+               # b2 to 2
+               'b2' = '2',
+               # c3 to 3
+               'c3' = '3',
+               # d4 to 4
+               'd4' = '4',
+               # e5 to 5
+               'e5' = '5')
+  ) +
+  # changing titles and axes names
+  labs(
+    # label x axis
+    x = 'Mood (1-4)',
+    # label y axis
+    y = '% of completed tasks',
+    # change title
+    title = 'Task completion seperated by mood',
+    # change subtitle
+    subtitle = '5/27/26') + 
+  # remove legend
+  theme(
+    legend.position = 'none'
+  )
 
 ```
 
@@ -210,7 +358,7 @@ Yes, both tests would have led me to the same decision -- finding a strong negat
 
 ## a.
 
-[An affective visualization for my personal data could take the form of a drawing, showing box plots -- representing mood -- that are being climbed/conquered by a person. For example, if a good mood leads to more work being completed, an affective visualization could show a raised large stack of papers (higher box plot) with sticky tabs sticking out (overlaid data) and a confident/smiling person lifting them above their head. On the inverse, if a bad mood leads to less work being completed, an affective visualization could show strewn papers on the floor (lower box plot) with balled up papers strewn about (overlaid data) and a dejected/tired person sitting down on them. Ideally this visualization would make the viewer understand the feeling of being unproductive/unwell in terms of work completion.]
+An affective visualization for my personal data could take the form of a drawing, showing box plots -- representing mood -- that are being climbed/conquered by a person. For example, if a good mood leads to more work being completed, an affective visualization could show a raised large stack of papers (higher box plot) with sticky tabs sticking out (overlaid data) and a confident/smiling person lifting them above their head. Another affective visualization could be another drawing, showing a linear model -- representing work completed -- that is being "weighed down" by the amount of things that I have in my bag (representing the time I spend on campus). Both of these "statistical visualizations" (boxplot, linear model) would be represented via something like stacks of paper, rather than points/lines indicating work being completed. Ideally these visualizations would make the viewer understand what factors/feelings/emotions are influencing work completion, and better relate/understand the graph.
 
 ## b. 
 
