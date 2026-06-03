@@ -1,5 +1,7 @@
 # ENVS-193DS_homework-03
 
+Spring 2026
+
 ## General Information
 
 This is a repo for ENVS 193DS Homework Assignment 3, Spring 2026. 
