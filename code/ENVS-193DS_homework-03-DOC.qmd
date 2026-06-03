@@ -27,7 +27,7 @@ library(readxl)
 Data: 
 
 ```{r}
-#| label: data
+#| label: datastrong
 
 # creating object from 'kelp' from data
 kelp <- read.csv(here('data', 'temp-kelp.csv'))
@@ -163,7 +163,7 @@ To evaluate the strength of the relationship between temperature and giant kelp 
 
 ## e.
 
-There is a strong correlation between ocean temperature and giant kelp frond elongation rate. As temperature increases, kelp frond elongation rate decreases, indicating decreased growth with warming temperatures. This information is important for giant kelp health -- the ongoing climate crisis and subsequent consistently warming ocean temperatures hold significant negative implications for giant kelp health over time; without action against climate change (and warming oceans), giant kelp populations will degrade over time, potentially leading to larger-scale ecosystem damages.
+There is a moderate correlation between ocean temperature and giant kelp frond elongation rate. As temperature increases, kelp frond elongation rate decreases, indicating decreased growth with warming temperatures. This information is important for giant kelp health -- the ongoing climate crisis and subsequent consistently warming ocean temperatures hold significant negative implications for giant kelp health over time; without action against climate change (and warming oceans), giant kelp populations will degrade over time, potentially leading to larger-scale ecosystem damages.
 
 ## f.
 
@@ -210,7 +210,7 @@ cor.test(
 
 ```
 
-Yes, both tests would have led me to the same decision -- finding a strong negative relationship and rejecting the null -- as both tests resulted in a strong negative correlation of -0.69 (correlation coefficients: |0.7| - |0.9| = strong correlation). After running the Pearson's test, I found a strong negative relationship between ocean temperature and giant kelp frond elongation rate (Pearson's r = -0.69, t(30) = -5.19, p = 1.37 * 10^-5^, $\alpha$ = 0.05). This conclusion is the same as my conclusion after running the Spearman's test. 
+Yes, both tests would have led me to the same decision -- finding a moderate negative relationship and rejecting the null -- as both tests resulted in a moderate negative correlation of -0.69. After running the Pearson's test, I found a moderate negative relationship between ocean temperature and giant kelp frond elongation rate (Pearson's r = -0.69, t(30) = -5.19, p = 1.37 * 10^-5^, $\alpha$ = 0.05). This conclusion is the same as my conclusion after running the Spearman's test. 
 
 # Problem 2
 
