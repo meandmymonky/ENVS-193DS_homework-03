@@ -159,7 +159,7 @@ cor.test(
 
 ## d.
 
-To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate I used a Spearmans rank correlation test. I chose to use Spearmans test over Pearsons as I did not check for normality nor a linear relationship. After running the Spearmans test, I found a strong negative relationship between ocean temperature and giant kelp frond elongation rate (Spearman $\rho$ = -0.69, S = 9216.1, p = 1.29 * 10^-5^, $\alpha$ = 0.05).
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate I used a Spearmans rank correlation test. I chose to use Spearmans test over Pearsons as I did not check for normality nor a linear relationship. After running the Spearmans test, I found a moderate negative relationship between ocean temperature and giant kelp frond elongation rate (Spearman $\rho$ = -0.69, S = 9216.1, p = 1.29 * 10^-5^, $\alpha$ = 0.05).
 
 ## e.
 
