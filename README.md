@@ -8,9 +8,9 @@ This is a repo created and contributed to by Megan Zhao for ENVS 193DS.
 
 ## Data and File Information
 
-There is a `code` folder in which all code for visualizations and tables is stored.
-
 There is a `data` folder in which all data is stored.
+
+There is a `code` folder in which all code for visualizations (kelp growth-ocean correlations, personal data visualizations), tests, and tables is stored.
 
 ## Rendered PDF
 
