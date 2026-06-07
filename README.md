@@ -16,4 +16,4 @@ There is a `code` folder in which all code for visualizations (kelp growth-ocean
 
 ## Rendered PDF
 
-The rendered .pdf for Homework 3 is [here](https://github.com/meandmymonky/ENVS-193DS_homework-03/blob/main/ENVS-193DS%20Homework%203%20-%20DOC.pdf)
+The rendered .pdf for Homework 3 is [here](https://github.com/meandmymonky/ENVS-193DS_homework-03/blob/main/code/ENVS-193DS_homework-03-DOC.pdf)
